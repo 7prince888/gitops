@@ -1,8 +1,14 @@
 #sample kube
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-ns
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  namespace: nginx-ns
   labels:
     app: nginx
 spec:
